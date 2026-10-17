@@ -5,6 +5,8 @@ version: "1.0.0"
 date-released: "2026-10-17"
 type: dataset
 license: MIT
+doi: "10.5281/zenodo.23443032"
+repository-code: "https://github.com/mikevilela/avaliacao-pratica-politicas-publicas"
 authors:
   - family-names: "Rodrigues"
     given-names: "Miguel Ângelo Vilela"

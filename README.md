@@ -64,7 +64,7 @@ Versões usadas para produzir os resultados do livro: R: haven 2.5.5, sandwich 3
 
 ## Como citar
 
-> Rodrigues, Miguel Ângelo Vilela (2026). *Avaliação Prática de Políticas Públicas — dados e código* (versão 1.0.0) [conjunto de dados e código]. Zenodo. https://doi.org/[DOI a atribuir]
+> Rodrigues, Miguel Ângelo Vilela (2026). *Avaliação Prática de Políticas Públicas — dados e código* (versão 1.0.0) [conjunto de dados e código]. Zenodo. https://doi.org/10.5281/zenodo.23443032
 
 ## Licenças
 
