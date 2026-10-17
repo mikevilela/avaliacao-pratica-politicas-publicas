@@ -1,0 +1,13 @@
+> library(haven)
+> d <- read_dta("../dados/freguesias_participacao.dta")
+> d <- as.data.frame(zap_labels(d))
+> dim(d)
+[1] 14663     6
+
+> head(d, 5)
+     SMU registered_voters  turnout treated Year APU
+1 010103            3686.0 52.82149       0 2017   0
+2 010103            3686.0 50.00000       0 2013   0
+3 010103            3976.4 57.01000       0 2005   0
+4 010103            3952.0 48.74000       0 2001   0
+5 010103            4000.8 55.68000       0 2009   0

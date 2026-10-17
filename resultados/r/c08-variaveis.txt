@@ -1,0 +1,14 @@
+> s$pos_tempo <- s$paridade * (s$time - 8)
+> print(s[, c("year", "time", "paridade", "pos_tempo")], row.names = FALSE)
+ year time paridade pos_tempo
+ 1979    1        0         0
+ 1982    2        0         0
+ 1985    3        0         0
+ 1989    4        0         0
+ 1993    5        0         0
+ 1997    6        0         0
+ 2001    7        0         0
+ 2005    8        0         0
+ 2009    9        1         1
+ 2013   10        1         2
+ 2017   11        1         3

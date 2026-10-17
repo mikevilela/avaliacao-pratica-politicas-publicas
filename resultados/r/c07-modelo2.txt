@@ -1,0 +1,14 @@
+> summary(feols(participacao ~ agregada * pos13 + urbana,
++               data = subset(d, ano %in% c(2009, 2013)), vcov = "iid"))
+OLS estimation, Dep. Var.: participacao
+Observations: 5,892
+Standard-errors: IID
+                Estimate Std. Error    t value  Pr(>|t|)
+(Intercept)    66.792568   0.212536 314.265454 < 2.2e-16 ***
+agregada       -0.144730   0.369176  -0.392034  0.695047
+pos13          -3.411192   0.290664 -11.735857 < 2.2e-16 ***
+urbana         -5.504614   0.283298 -19.430456 < 2.2e-16 ***
+agregada:pos13 -1.242072   0.505931  -2.455024  0.014116 *
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+RMSE: 9.11738   Adj. R2: 0.10293

@@ -1,0 +1,35 @@
+> calip <- 0.25 * sd(d$ps)
+> calip
+[1] 0.05528532
+
+> d$fora_cal <- 0
+> repeat {
++   s  <- d[d$fora_cal == 0, ]
++   ps <- fitted(glm(f, family = binomial, data = s))
++   p0 <- ps[s$teip == 0]
++   dist2 <- sapply(ps[s$teip == 1], function(p) sort(abs(p0 - p))[2])
++   sem_par <- s$codigo[s$teip == 1][dist2 > calip]
++   if (length(sem_par) == 0) break
++   d$fora_cal[d$codigo %in% sem_par] <- 1
++ }
+> table(d$teip, d$fora_cal)
+
+      0   1
+  0 541   0
+  1 123  17
+
+> dc <- d[d$fora_cal == 0, ]
+> dc$ps <- fitted(glm(f, family = binomial, data = dc))
+> mc <- Match(Y = dc$pds, Tr = dc$teip, X = dc$ps, estimand = "ATT", M = 1,
++             Var.calc = 2, distance.tolerance = 1e-10)
+> summary(mc)
+
+Estimate...  -2.3974
+AI SE......  1.2275
+T-stat.....  -1.9531
+p.val......  0.050804
+
+Original number of observations..............  664
+Original number of treated obs...............  123
+Matched number of observations...............  123
+Matched number of observations  (unweighted).  123

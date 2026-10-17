@@ -1,0 +1,26 @@
+> library(fixest)
+> p <- zap_labels(read_dta("../dados/paridade_municipios.dta"))
+> p$mulheres  <- p$Women_in_office
+> p$paridade  <- p$GenderQuotas
+> p$pos_tempo <- p$paridade * (p$time - 8)
+> mp <- fepois(mulheres ~ time + paridade + pos_tempo | id, data = p,
++              cluster = ~id)
+> summary(mp)
+Poisson estimation, Dep. Var.: mulheres
+Observations: 3,366
+Fixed-effects: id: 306
+Standard-errors: Clustered (id)
+           Estimate Std. Error  z value  Pr(>|z|)
+time       0.257865   0.015480 16.65777 < 2.2e-16 ***
+paridade   0.395669   0.047187  8.38522 < 2.2e-16 ***
+pos_tempo -0.202644   0.022453 -9.02538 < 2.2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+Log-Likelihood: -3,175.6   Adj. Pseudo R2: 0.194547
+           BIC:  8,860.7     Squared Cor.: 0.619787
+
+> round(cbind(IRR = exp(coef(mp)), ep = exp(coef(mp)) * se(mp)), 4)
+             IRR     ep
+time      1.2942 0.0200
+paridade  1.4854 0.0701
+pos_tempo 0.8166 0.0183

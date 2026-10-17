@@ -1,0 +1,16 @@
+. quietly regress ln_mulheres time paridade pos_tempo, vce(robust)
+. predict ln_prev, xb
+. generate prev = exp(ln_prev)
+. generate contraf = exp(_b[_cons] + _b[time]*time) if time >= 8
+(7 missing values generated)
+
+. list year mulheres prev contraf if time >= 8, noobs
+
+  +---------------------------------------+
+  | year   mulheres       prev    contraf |
+  |---------------------------------------|
+  | 2005        337   327.7272   327.7271 |
+  | 2009        537   531.2083   420.0725 |
+  | 2013        549   561.0364   538.4385 |
+  | 2017        599   592.5398    690.157 |
+  +---------------------------------------+

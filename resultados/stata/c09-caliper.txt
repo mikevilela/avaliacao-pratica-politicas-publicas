@@ -1,0 +1,44 @@
+. quietly summarize ps
+. scalar calip = 0.25*r(sd)
+. display calip
+.05528532
+
+. generate fora_cal = 0
+. local k = 1
+. while `k' > 0 {
+  2.     capture drop os_
+  3.     capture teffects psmatch (pds) (teip $X, logit) if fora_cal == 0, ///
+>         atet nneighbor(1) caliper(`=calip') osample(os_)
+  4.     quietly count if os_ == 1
+  5.     local k = r(N)
+  6.     quietly replace fora_cal = 1 if os_ == 1
+  7. }
+
+. tabulate teip fora_cal
+
+   Unidade |
+   TEIP na |
+  lista de |
+ 2021 (1 = |       fora_cal
+      sim) |         0          1 |     Total
+-----------+----------------------+----------
+       Não |       541          0 |       541
+       Sim |       123         17 |       140
+-----------+----------------------+----------
+     Total |       664         17 |       681
+
+. teffects psmatch (pds) (teip $X, logit) if fora_cal == 0, ///
+>     atet nneighbor(1) caliper(`=calip')
+
+Treatment-effects estimation                   Number of obs      =        664
+Estimator      : propensity-score matching     Matches: requested =          1
+Outcome model  : matching                                     min =          1
+Treatment model: logit                                        max =          1
+-------------------------------------------------------------------------------
+              |              AI robust
+          pds | Coefficient  std. err.      z    P>|z|     [95% conf. interval]
+--------------+----------------------------------------------------------------
+ATET          |
+         teip |
+(Sim vs Não)  |  -2.397374   .9832192    -2.44   0.015    -4.324448   -.4702996
+-------------------------------------------------------------------------------

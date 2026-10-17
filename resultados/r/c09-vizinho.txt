@@ -1,0 +1,14 @@
+> library(Matching)
+> mt <- Match(Y = d$pds, Tr = d$teip, X = d$ps, estimand = "ATT", M = 1,
++             Var.calc = 2, distance.tolerance = 1e-10)
+> summary(mt)
+
+Estimate...  -2.7581
+AI SE......  1.5381
+T-stat.....  -1.7931
+p.val......  0.072951
+
+Original number of observations..............  681
+Original number of treated obs...............  140
+Matched number of observations...............  140
+Matched number of observations  (unweighted).  140

@@ -1,0 +1,15 @@
+> combinar <- function(w) {
++   est <- sum(w * coef(m1))
++   ep  <- sqrt(drop(t(w) %*% V1 %*% w))
++   ic  <- est + c(-1, 1) * qt(0.975, df = m1$df.residual) * ep
++   round(c(estimativa = est, ep = ep, t = est / ep,
++           p = 2 * pt(-abs(est / ep), df = m1$df.residual),
++           ic_inf = ic[1], ic_sup = ic[2]), 4)
++ }
+> combinar(c(0, 0, 1, 1))   # paridade + pos_tempo
+estimativa         ep          t          p     ic_inf     ic_sup
+    0.2347     0.0743     3.1612     0.0159     0.0591     0.4103
+
+> combinar(c(0, 1, 0, 1))   # time + pos_tempo
+estimativa         ep          t          p     ic_inf     ic_sup
+    0.0546     0.0096     5.6837     0.0007     0.0319     0.0774

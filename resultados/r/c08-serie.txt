@@ -1,0 +1,20 @@
+> names(s) <- c("year", "mulheres", "time", "paridade", "quotas_vol",
++               "eleitos", "prop_mulheres")
+> s <- s[order(s$time), ]
+> s$ln_mulheres <- log(s$mulheres)
+> s$dif    <- c(NA, diff(s$mulheres))
+> s$dif_ln <- c(NA, diff(s$ln_mulheres))
+> print(s[, c("year", "time", "mulheres", "dif", "ln_mulheres", "dif_ln")],
++       row.names = FALSE, digits = 4)
+ year time mulheres dif ln_mulheres   dif_ln
+ 1979    1       70  NA       4.248       NA
+ 1982    2       69  -1       4.234 -0.01439
+ 1985    3       85  16       4.443  0.20854
+ 1989    4      108  23       4.682  0.23948
+ 1993    5      151  43       5.017  0.33515
+ 1997    6      210  59       5.347  0.32983
+ 2001    7      269  59       5.595  0.24760
+ 2005    8      337  68       5.820  0.22537
+ 2009    9      537 200       6.286  0.46592
+ 2013   10      549  12       6.308  0.02210
+ 2017   11      599  50       6.395  0.08716

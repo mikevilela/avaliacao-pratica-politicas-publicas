@@ -1,0 +1,21 @@
+> es <- feols(participacao ~ i(ano, agregada, ref = 2009) +
++               i(ano, ref = 2001) | freguesia,
++             data = d, cluster = ~freguesia)
+> summary(es)
+OLS estimation, Dep. Var.: participacao
+Observations: 14,645
+Fixed-effects: freguesia: 3,023
+Standard-errors: Clustered (freguesia)
+                    Estimate Std. Error    t value   Pr(>|t|)
+ano::2001:agregada  0.165276   0.254251   0.650052 5.1571e-01
+ano::2005:agregada -0.074607   0.208234  -0.358283 7.2016e-01
+ano::2013:agregada -1.341564   0.211062  -6.356262 2.3789e-10 ***
+ano::2017:agregada -2.237910   0.225087  -9.942418  < 2.2e-16 ***
+ano::2005           0.133344   0.128426   1.038297 2.9921e-01
+ano::2009          -2.691402   0.157240 -17.116537  < 2.2e-16 ***
+ano::2013          -6.098759   0.169653 -35.948401  < 2.2e-16 ***
+ano::2017          -4.452477   0.165169 -26.957129  < 2.2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+RMSE: 3.85642     Adj. R2: 0.797076
+                Within R2: 0.327329

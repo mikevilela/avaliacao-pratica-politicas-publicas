@@ -1,0 +1,15 @@
+> d$pos17 <- as.integer(d$ano == 2017)
+> summary(feols(participacao ~ agregada * pos17 + urbana,
++               data = subset(d, ano %in% c(2013, 2017)), vcov = "iid"))
+OLS estimation, Dep. Var.: participacao
+Observations: 6,040
+Standard-errors: IID
+                Estimate Std. Error   t value   Pr(>|t|)
+(Intercept)    63.561609   0.214317 296.57816  < 2.2e-16 ***
+agregada       -1.271139   0.353043  -3.60052 3.2013e-04 ***
+pos17           1.646265   0.293406   5.61087 2.1026e-08 ***
+urbana         -6.445938   0.282263 -22.83667  < 2.2e-16 ***
+agregada:pos17 -0.903316   0.497006  -1.81751 6.9188e-02 .
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+RMSE: 9.19881   Adj. R2: 0.097784

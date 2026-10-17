@@ -1,0 +1,31 @@
+. predict ps, pr
+. tabstat ps, by(teip) statistics(n min p50 max) format(%6.3f)
+
+Summary for variables: ps
+Group variable: teip (Unidade TEIP na lista de 2021 (1 = sim))
+
+  teip |         N       Min       p50       Max
+-------+----------------------------------------
+   Não |   541.000     0.008     0.091     0.837
+   Sim |   140.000     0.019     0.364     0.980
+-------+----------------------------------------
+ Total |   681.000     0.008     0.117     0.980
+------------------------------------------------
+
+. summarize ps if teip == 0
+
+    Variable |        Obs        Mean    Std. dev.       Min        Max
+-------------+---------------------------------------------------------
+          ps |        541    .1446055    .1442694   .0079161   .8368676
+
+. count if teip == 1 & ps > r(max)
+  21
+
+. summarize ps if teip == 1
+
+    Variable |        Obs        Mean    Std. dev.       Min        Max
+-------------+---------------------------------------------------------
+          ps |        140     .441203    .2966364   .0190109    .979993
+
+. count if teip == 0 & ps < r(min)
+  22

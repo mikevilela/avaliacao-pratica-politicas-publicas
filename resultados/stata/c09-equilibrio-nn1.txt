@@ -1,0 +1,26 @@
+. quietly teffects psmatch (pds) (teip $X, logit), atet nneighbor(1)
+. tebalance summarize
+(refitting the model using the generate() option)
+
+Covariate balance summary
+
+                         Raw      Matched
+-----------------------------------------
+Number of obs =          681          280
+Treated obs   =          140          140
+Control obs   =          541          140
+-----------------------------------------
+
+-----------------------------------------------------------------
+                |Standardized differences          Variance ratio
+                |        Raw     Matched           Raw    Matched
+----------------+------------------------------------------------
+        pct_ase |   1.029104   -.0164884      1.382787   1.148533
+  conclusao_esp |  -1.112378   -.0327966       3.22246   1.588539
+      ln_alunos |  -.5174926   -.1926215      1.026884   1.152912
+   ln_densidade |   .3091864    .1019418      1.522448   1.310909
+         centro |  -.5080317   -.1384009      .3947908   .6994536
+            aml |   .2933114    -.014958      1.353224   .9903566
+       alentejo |   .1112761   -.1175429      1.312395   .7996522
+        algarve |   .2642313    .1529943      2.577667   1.590331
+-----------------------------------------------------------------

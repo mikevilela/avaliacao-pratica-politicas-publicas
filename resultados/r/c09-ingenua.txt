@@ -1,0 +1,18 @@
+> library(sandwich); library(lmtest)
+> m0 <- lm(pds ~ teip, data = d)
+> coeftest(m0, vcov. = vcovHC(m0, type = "HC1"))
+
+t test of coefficients:
+
+             Estimate Std. Error t value  Pr(>|t|)
+(Intercept)  31.84185    0.48566  65.565 < 2.2e-16 ***
+teip        -12.99839    1.06554 -12.199 < 2.2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+> m1 <- lm(pds ~ teip + pct_ase + conclusao_esp + ln_alunos + ln_densidade +
++            centro + aml + alentejo + algarve, data = d)
+> coeftest(m1, vcov. = vcovHC(m1, type = "HC1"))["teip", ]
+   Estimate  Std. Error     t value    Pr(>|t|)
+-2.07190676  0.86364139 -2.39903597  0.01671013

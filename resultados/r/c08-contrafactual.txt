@@ -1,0 +1,11 @@
+> b <- coef(m1)
+> s$prev    <- exp(fitted(m1))
+> s$contraf <- ifelse(s$time >= 8, exp(b["(Intercept)"] + b["time"] * s$time),
++                     NA)
+> print(s[s$time >= 8, c("year", "mulheres", "prev", "contraf")],
++       row.names = FALSE)
+ year mulheres     prev  contraf
+ 2005      337 327.7271 327.7271
+ 2009      537 531.2083 420.0725
+ 2013      549 561.0365 538.4384
+ 2017      599 592.5397 690.1570

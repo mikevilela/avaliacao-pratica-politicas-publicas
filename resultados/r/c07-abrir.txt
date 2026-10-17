@@ -1,0 +1,16 @@
+> library(haven)
+> d <- as.data.frame(zap_labels(
++   read_dta("../dados/freguesias_participacao.dta")))
+> names(d) <- c("freguesia", "eleitores", "participacao", "agregada",
++               "ano", "urbana")
+> dim(d)
+[1] 14663     6
+
+> head(d)
+  freguesia eleitores participacao agregada  ano urbana
+1    010103    3686.0     52.82149        0 2017      0
+2    010103    3686.0     50.00000        0 2013      0
+3    010103    3976.4     57.01000        0 2005      0
+4    010103    3952.0     48.74000        0 2001      0
+5    010103    4000.8     55.68000        0 2009      0
+6    010109    3192.0     68.17000        0 2005      1

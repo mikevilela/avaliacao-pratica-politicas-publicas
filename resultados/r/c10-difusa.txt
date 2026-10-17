@@ -1,0 +1,37 @@
+> summary(rdrobust(d$retencao, d$folga, c = 0, fuzzy = d$ase_a))
+Call: rdrobust
+
+Fuzzy RD estimates using local polynomial regression.
+
+Number of Obs.                40000
+BW type                       mserd
+Kernel                   Triangular
+VCE method                       NN
+
+                               Left        Right
+Number of Obs.                22267        17733
+Eff. Number of Obs.            7590         8714
+Order est. (p)                    1            1
+Order bias (q)                    2            2
+BW est. (h)                 911.282      911.282
+BW bias (b)                1463.955     1463.955
+rho (h/b)                     0.622        0.622
+Unique Obs.                   21711        17012
+
+First-stage estimates.
+
+=====================================================================
+                   Point    Robust Inference
+                Estimate         z     P>|z|      [ 95% C.I. ]
+=====================================================================
+     Rd Effect     0.868    90.651     0.000     [0.847 , 0.884]
+=====================================================================
+
+Treatment effect estimates.
+
+=====================================================================
+                   Point    Robust Inference
+                Estimate         z     P>|z|      [ 95% C.I. ]
+---------------------------------------------------------------------
+     RD Effect    -0.049    -3.894     0.000    [-0.070 , -0.023]
+=====================================================================

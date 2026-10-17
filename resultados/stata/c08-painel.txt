@@ -1,0 +1,38 @@
+. use "../dados/paridade_municipios.dta", clear
+. rename (Women_in_office GenderQuotas) (mulheres paridade)
+. generate pos_tempo = paridade*(time - 8)
+. xtset id time
+
+Panel variable: id (strongly balanced)
+ Time variable: time, 1 to 11
+         Delta: 1 unit
+
+. xtpoisson mulheres time paridade pos_tempo, fe vce(robust) irr
+note: 2 groups (22 obs) dropped because of all zero outcomes
+
+Iteration 0:  Log pseudolikelihood = -3330.0694
+Iteration 1:  Log pseudolikelihood = -2615.6974
+Iteration 2:  Log pseudolikelihood = -2564.5315
+Iteration 3:  Log pseudolikelihood =  -2563.991
+Iteration 4:  Log pseudolikelihood =  -2563.991
+
+Conditional fixed-effects Poisson regression         Number of obs    =  3,366
+Group variable: id                                   Number of groups =    306
+
+                                                     Obs per group:
+                                                                  min =     11
+                                                                  avg =   11.0
+                                                                  max =     11
+
+                                                     Wald chi2(3)     = 899.60
+Log pseudolikelihood = -2563.991                     Prob > chi2      = 0.0000
+
+                                     (Std. err. adjusted for clustering on id)
+------------------------------------------------------------------------------
+             |               Robust
+    mulheres |        IRR   std. err.      z    P>|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+        time |   1.294164   .0199922    16.69   0.000     1.255567    1.333947
+    paridade |   1.485378    .069944     8.40   0.000     1.354426    1.628991
+   pos_tempo |   .8165689    .018296    -9.04   0.000     .7814853    .8532275
+------------------------------------------------------------------------------

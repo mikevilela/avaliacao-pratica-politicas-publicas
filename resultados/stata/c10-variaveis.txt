@@ -1,0 +1,11 @@
+. generate double folga = -dist_limiar
+. generate byte elegivel = (folga >= 0)
+. summarize rend_ref folga elegivel ase_a retencao
+
+    Variable |        Obs        Mean    Std. dev.       Min        Max
+-------------+---------------------------------------------------------
+    rend_ref |     40,000    4304.634    1994.195      595.6   12404.24
+       folga |     40,000   -647.1344    1994.195   -8746.74     3061.9
+    elegivel |     40,000     .443325    .4967838          0          1
+       ase_a |     40,000     .490575    .4999174          0          1
+    retencao |     40,000     .071325    .2573702          0          1

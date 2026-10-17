@@ -1,0 +1,16 @@
+. tabstat pds conclusao retencao $X, by(teip) nototal format(%8.2f)
+
+Summary statistics: Mean
+Group variable: teip (Unidade TEIP na lista de 2021 (1 = sim))
+
+teip |       pds  conclu~o  retencao   pct_ase  conclu~p  ln_alu~s  ln_den~e
+-----+----------------------------------------------------------------------
+ Não |     31.84     89.32      5.13     32.69     88.76      5.79      5.58
+ Sim |     18.84     82.26      8.30     45.58     84.51      5.49      6.17
+----------------------------------------------------------------------------
+
+teip |    centro       aml  alentejo   algarve
+-----+----------------------------------------
+ Não |      0.28      0.21      0.10      0.04
+ Sim |      0.09      0.34      0.14      0.11
+----------------------------------------------

@@ -1,0 +1,41 @@
+. use "../dados/ias_ase_simulado.dta", clear
+(DADOS SIMULADOS para fins pedagógicos (cap. de RDD). Não são dados reais.)
+
+. describe
+
+Contains data from ../dados/ias_ase_simulado.dta
+ Observations:        40,000                  DADOS SIMULADOS para fins
+                                                pedagógicos (cap. de RDD). Não
+                                                são dados reais.
+    Variables:            18                  5 Oct 2026 21:28
+                                              (_dta has notes)
+--------------------------------------------------------------------------------
+Variable      Storage   Display    Value
+    name         type    format    label      Variable label
+--------------------------------------------------------------------------------
+aluno_id        long    %12.0g
+ncriancas       byte    %8.0g                 Crianças e jovens com abono no
+                                                agregado
+monoparental    byte    %8.0g                 Família monoparental
+dim_agregado    byte    %8.0g                 Dimensão do agregado familiar
+regiao          byte    %12.0g     reg        Região (NUTS II, continente)
+rend_ref        double  %10.0g                Rendimento de referência anual
+                                                (euros, rendimentos de 2025)
+rapariga        byte    %8.0g                 Aluna (1) ou aluno (0)
+ano_esc         byte    %8.0g                 Ano de escolaridade (5.º a 9.º)
+idade           byte    %8.0g                 Idade no início do ano letivo
+escol_pais      byte    %18.0g     esc        Escolaridade mais elevada dos pais
+desemprego      byte    %8.0g                 Progenitor em desemprego há 3 ou
+                                                mais meses
+escalao_abono   byte    %8.0g                 Escalão do abono de família (1 a
+                                                3)
+escalao_ase     byte    %12.0g     ase        Escalão da Ação Social Escolar
+ase_a           byte    %8.0g                 Escalão A da ASE
+ase_b           byte    %8.0g                 Escalão B da ASE
+retencao        byte    %8.0g                 Retido no final do ano letivo
+nota            double  %10.0g                Pontuação numa prova (escala
+                                                aprox. padronizada)
+dist_limiar     double  %10.0g                Rendimento de referência menos 3
+                                                657,50 euros
+--------------------------------------------------------------------------------
+Sorted by:

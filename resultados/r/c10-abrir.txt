@@ -1,0 +1,11 @@
+> library(haven)
+> d <- zap_labels(read_dta("../dados/ias_ase_simulado.dta"))
+> dim(d)
+[1] 40000    18
+
+> names(d)
+ [1] "aluno_id"      "ncriancas"     "monoparental"  "dim_agregado"
+ [5] "regiao"        "rend_ref"      "rapariga"      "ano_esc"
+ [9] "idade"         "escol_pais"    "desemprego"    "escalao_abono"
+[13] "escalao_ase"   "ase_a"         "ase_b"         "retencao"
+[17] "nota"          "dist_limiar"

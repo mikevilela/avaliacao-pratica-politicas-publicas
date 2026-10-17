@@ -1,0 +1,6 @@
+> table(d$escalao_abono, d$escalao_ase)
+
+        1     2     3
+  1 17733     0     0
+  2  1890 17018     0
+  3     0     0  3359

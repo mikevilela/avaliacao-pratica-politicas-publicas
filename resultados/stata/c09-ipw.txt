@@ -1,0 +1,43 @@
+. teffects ipw (pds) (teip $X, logit), atet
+
+Iteration 0:  EE criterion = 5.787e-18
+Iteration 1:  EE criterion = 3.670e-30
+
+Treatment-effects estimation                    Number of obs     =        681
+Estimator      : inverse-probability weights
+Outcome model  : weighted mean
+Treatment model: logit
+-------------------------------------------------------------------------------
+              |               Robust
+          pds | Coefficient  std. err.      z    P>|z|     [95% conf. interval]
+--------------+----------------------------------------------------------------
+ATET          |
+         teip |
+(Sim vs Não)  |  -4.753489   .9692623    -4.90   0.000    -6.653208    -2.85377
+--------------+----------------------------------------------------------------
+POmean        |
+         teip |
+         Não  |   23.59695   .8769828    26.91   0.000      21.8781    25.31581
+-------------------------------------------------------------------------------
+
+. teffects ipwra (pds $X) (teip $X, logit), atet
+
+Iteration 0:  EE criterion = 5.787e-18
+Iteration 1:  EE criterion = 2.232e-28
+
+Treatment-effects estimation                    Number of obs     =        681
+Estimator      : IPW regression adjustment
+Outcome model  : linear
+Treatment model: logit
+-------------------------------------------------------------------------------
+              |               Robust
+          pds | Coefficient  std. err.      z    P>|z|     [95% conf. interval]
+--------------+----------------------------------------------------------------
+ATET          |
+         teip |
+(Sim vs Não)  |  -2.122557   .8284176    -2.56   0.010    -3.746225   -.4988878
+--------------+----------------------------------------------------------------
+POmean        |
+         teip |
+         Não  |   20.96602   1.018163    20.59   0.000     18.97046    22.96158
+-------------------------------------------------------------------------------

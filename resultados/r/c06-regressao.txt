@@ -1,0 +1,26 @@
+> d$pos <- as.integer(d$ano == 2013)
+> m <- lm(participacao ~ agregada * pos + urbana,
++         data = subset(d, ano %in% c(2009, 2013)))
+> summary(m)
+
+Call:
+lm(formula = participacao ~ agregada * pos + urbana, data = subset(d,
+    ano %in% c(2009, 2013)))
+
+Residuals:
+    Min      1Q  Median      3Q     Max
+-66.793  -6.137   0.157   6.607  27.623
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)
+(Intercept)   66.7926     0.2125 314.265   <2e-16 ***
+agregada      -0.1447     0.3692  -0.392   0.6950
+pos           -3.4112     0.2907 -11.736   <2e-16 ***
+urbana        -5.5046     0.2833 -19.430   <2e-16 ***
+agregada:pos  -1.2421     0.5059  -2.455   0.0141 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 9.121 on 5887 degrees of freedom
+Multiple R-squared:  0.1035,	Adjusted R-squared:  0.1029
+F-statistic:   170 on 4 and 5887 DF,  p-value: < 2.2e-16

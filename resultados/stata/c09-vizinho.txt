@@ -1,0 +1,14 @@
+. teffects psmatch (pds) (teip $X, logit), atet nneighbor(1)
+
+Treatment-effects estimation                   Number of obs      =        681
+Estimator      : propensity-score matching     Matches: requested =          1
+Outcome model  : matching                                     min =          1
+Treatment model: logit                                        max =          1
+-------------------------------------------------------------------------------
+              |              AI robust
+          pds | Coefficient  std. err.      z    P>|z|     [95% conf. interval]
+--------------+----------------------------------------------------------------
+ATET          |
+         teip |
+(Sim vs Não)  |  -2.758079   1.196567    -2.30   0.021    -5.103308   -.4128511
+-------------------------------------------------------------------------------

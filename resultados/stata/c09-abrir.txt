@@ -1,0 +1,44 @@
+. use "../dados/teip_agrupamentos.dta", clear
+. global X "pct_ase conclusao_esp ln_alunos ln_densidade centro aml alentejo alg
+> arve"
+. describe teip pds conclusao retencao $X
+
+Variable      Storage   Display    Value
+    name         type    format    label      Variable label
+--------------------------------------------------------------------------------
+teip            byte    %8.0g      simnao     Unidade TEIP na lista de 2021 (1 =
+                                                sim)
+pds             float   %9.0g                 Percursos diretos de sucesso no
+                                                3.º ciclo, 2021/22-2022/23 (%)
+conclusao       float   %9.0g                 Conclusão do 3.º ciclo em 3 anos,
+                                                coortes 2020/21-2022/23 (%)
+retencao        float   %9.0g                 Taxa de retenção/desistência no
+                                                3.º ciclo, 2021/22-2022/23 (%)
+pct_ase         float   %9.0g                 Alunos com Ação Social Escolar nas
+                                                coortes do 3.º ciclo (%)
+conclusao_esp   float   %9.0g                 Conclusão esperada dado o perfil
+                                                ASE e a escolaridade da mãe (%)
+ln_alunos       float   %9.0g                 Logaritmo dos alunos do 3.º ciclo
+                                                (2019/20)
+ln_densidade    float   %9.0g                 Logaritmo da densidade
+                                                populacional (2011)
+centro          byte    %9.0g                 Região Centro
+aml             byte    %9.0g                 Área Metropolitana de Lisboa
+alentejo        byte    %9.0g                 Região Alentejo
+algarve         byte    %9.0g                 Região Algarve
+
+. keep if amostra == 1
+(81 observations deleted)
+
+. tabulate teip
+
+    Unidade |
+    TEIP na |
+   lista de |
+  2021 (1 = |
+       sim) |      Freq.     Percent        Cum.
+------------+-----------------------------------
+        Não |        541       79.44       79.44
+        Sim |        140       20.56      100.00
+------------+-----------------------------------
+      Total |        681      100.00

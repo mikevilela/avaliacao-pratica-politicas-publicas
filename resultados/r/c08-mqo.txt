@@ -1,0 +1,29 @@
+> library(sandwich); library(lmtest)
+> m1 <- lm(ln_mulheres ~ time + paridade + pos_tempo, data = s)
+> V1 <- vcovHC(m1, type = "HC1")
+> coeftest(m1, vcov. = V1)
+
+t test of coefficients:
+
+             Estimate Std. Error t value  Pr(>|t|)
+(Intercept)  3.806214   0.135260 28.1400 1.839e-08 ***
+time         0.248246   0.022180 11.1921 1.014e-05 ***
+paridade     0.428341   0.057437  7.4576 0.0001423 ***
+pos_tempo   -0.193614   0.024174 -8.0093 9.047e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+> summary(m1)$r.squared
+[1] 0.9892057
+
+> waldtest(m1, vcov = V1, test = "F")
+Wald test
+
+Model 1: ln_mulheres ~ time + paridade + pos_tempo
+Model 2: ln_mulheres ~ 1
+  Res.Df Df      F   Pr(>F)
+1      7
+2     10 -3 455.85 2.19e-08 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

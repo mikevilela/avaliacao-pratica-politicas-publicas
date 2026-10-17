@@ -1,0 +1,32 @@
+. rdrobust retencao folga, c(0) fuzzy(ase_a)
+
+Fuzzy RD estimates using local polynomial regression.
+
+      Cutoff c = 0 | Left of c  Right of c            Number of obs =      40000
+-------------------+----------------------            BW type       =      mserd
+     Number of obs |     22267       17733            Kernel        = Triangular
+Eff. Number of obs |      7590        8714            VCE method    =         NN
+    Order est. (p) |         1           1
+    Order bias (q) |         2           2
+       BW est. (h) |   911.283     911.283
+       BW bias (b) |  1463.955    1463.955
+         rho (h/b) |     0.622       0.622
+
+First-stage estimates. Outcome: ase_a. Running variable: folga.
+--------------------------------------------------------------------------------
+                   | Point         | Robust Inference
+                   | Estimate      | z-stat        P>|z|    [95% Conf. Interval]
+-------------------+------------------------------------------------------------
+         RD Effect |  .86752       | 90.6508       0.000     .851673     .883374
+--------------------------------------------------------------------------------
+
+Treatment effect estimates. Outcome: retencao. Running variable: folga. Treatmen
+> t Status: ase_a.
+--------------------------------------------------------------------------------
+                   | Point         | Robust Inference
+                   | Estimate      | z-stat        P>|z|    [95% Conf. Interval]
+-------------------+------------------------------------------------------------
+         RD Effect | -.04869       | -3.8939       0.000    -.070156    -.023178
+--------------------------------------------------------------------------------
+WARNING: bandwidths automatically computed for sharp RD estimation because perfe
+> ct compliance was detected on at least one side of the threshold.

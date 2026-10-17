@@ -1,0 +1,19 @@
+. use "../dados/paridade_serie.dta", clear
+. describe
+
+Contains data from ../dados/paridade_serie.dta
+ Observations:            11
+    Variables:             7                  21 Feb 2020 15:51
+--------------------------------------------------------------------------------
+Variable      Storage   Display    Value
+    name         type    format    label      Variable label
+--------------------------------------------------------------------------------
+year            float   %9.0g                 Year
+TotalMulheres   double  %10.0g                Total of Woman
+time            float   %9.0g
+ParLaw          float   %9.0g
+propostas       float   %9.0g
+Total           double  %10.0g                (sum) Total
+ProMulheres     float   %9.0g
+--------------------------------------------------------------------------------
+Sorted by: year

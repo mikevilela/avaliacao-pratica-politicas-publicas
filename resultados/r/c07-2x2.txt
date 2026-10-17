@@ -1,0 +1,15 @@
+> library(fixest)
+> d$pos13 <- as.integer(d$ano == 2013)
+> summary(feols(participacao ~ agregada * pos13,
++               data = subset(d, ano %in% c(2009, 2013)), vcov = "iid"))
+OLS estimation, Dep. Var.: participacao
+Observations: 5,892
+Standard-errors: IID
+                Estimate Std. Error   t value  Pr(>|t|)
+(Intercept)    65.739147   0.211974 310.12875 < 2.2e-16 ***
+agregada       -0.926180   0.378531  -2.44677  0.014443 *
+pos13          -3.411727   0.299814 -11.37947 < 2.2e-16 ***
+agregada:pos13 -1.136986   0.521828  -2.17885  0.029382 *
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+RMSE: 9.40519   Adj. R2: 0.045562

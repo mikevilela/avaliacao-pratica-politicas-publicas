@@ -1,0 +1,33 @@
+> f <- teip ~ pct_ase + conclusao_esp + ln_alunos + ln_densidade +
++   centro + aml + alentejo + algarve
+> logit <- glm(f, family = binomial, data = d)
+> summary(logit)
+
+Call:
+glm(formula = f, family = binomial, data = d)
+
+Coefficients:
+              Estimate Std. Error z value Pr(>|z|)
+(Intercept)   13.81885    4.54882   3.038 0.002382 **
+pct_ase        0.04791    0.01280   3.743 0.000182 ***
+conclusao_esp -0.18881    0.04810  -3.925 8.66e-05 ***
+ln_alunos     -0.43734    0.27248  -1.605 0.108491
+ln_densidade   0.28250    0.10359   2.727 0.006389 **
+centro        -0.19976    0.40631  -0.492 0.622979
+aml            0.09881    0.35134   0.281 0.778533
+alentejo       1.15051    0.45862   2.509 0.012120 *
+algarve        1.67314    0.45175   3.704 0.000212 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 691.95  on 680  degrees of freedom
+Residual deviance: 505.89  on 672  degrees of freedom
+AIC: 523.89
+
+Number of Fisher Scoring iterations: 5
+
+
+> 1 - logit$deviance / logit$null.deviance
+[1] 0.2688922

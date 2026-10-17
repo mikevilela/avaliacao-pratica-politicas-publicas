@@ -1,0 +1,15 @@
+> v <- c("pds", "conclusao", "retencao", X)
+> round(cbind(TEIP  = colMeans(d[d$teip == 1, v]),
++             Nunca = colMeans(d[d$teip == 0, v])), 2)
+               TEIP Nunca
+pds           18.84 31.84
+conclusao     82.26 89.32
+retencao       8.30  5.13
+pct_ase       45.58 32.69
+conclusao_esp 84.51 88.76
+ln_alunos      5.49  5.79
+ln_densidade   6.17  5.58
+centro         0.09  0.28
+aml            0.34  0.21
+alentejo       0.14  0.10
+algarve        0.11  0.04

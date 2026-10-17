@@ -1,0 +1,30 @@
+> library(prais)
+> m3 <- prais_winsten(ln_mulheres ~ time + paridade + pos_tempo, data = s,
++                     index = "time", max_iter = 100, tol = 1e-8)
+> summary(m3)
+
+Call:
+prais_winsten(formula = ln_mulheres ~ time + paridade + pos_tempo,
+    data = s, index = "time", max_iter = 100, tol = 1e-08)
+
+Residuals of the transformed model:
+      Min        1Q    Median        3Q       Max
+-0.135166 -0.059706  0.007479  0.033209  0.159820
+
+AR(1) coefficient rho after 23 iterations: 0.2646
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)
+(Intercept)  3.84011    0.09500  40.421 1.48e-09 ***
+time         0.24265    0.01845  13.151 3.43e-06 ***
+paridade     0.42779    0.16129   2.652   0.0328 *
+pos_tempo   -0.18352    0.07464  -2.459   0.0435 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.1 on 7 degrees of freedom
+Multiple R-squared:  0.978,	Adjusted R-squared:  0.9685
+F-statistic: 103.6 on 3 and 7 DF,  p-value: 3.658e-06
+
+Durbin-Watson statistic (original): 1.164
+Durbin-Watson statistic (transformed): 1.488

@@ -1,0 +1,11 @@
+> library(sandwich); library(lmtest)
+> m <- lm(retencao ~ ase_a, data = subset(d, escalao_abono <= 2))
+> coeftest(m, vcov. = vcovHC(m, type = "HC1"))
+
+t test of coefficients:
+
+             Estimate Std. Error t value Pr(>|t|)
+(Intercept) 0.0723939  0.0019865 36.4428   <2e-16 ***
+ase_a       0.0032316  0.0027402  1.1793   0.2383
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

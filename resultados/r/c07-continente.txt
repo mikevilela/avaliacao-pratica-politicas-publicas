@@ -1,0 +1,37 @@
+> d$distrito <- as.integer(substr(d$freguesia, 1, 2))
+> with(subset(d, distrito > 18), table(ano, agregada))
+      agregada
+ano      1
+  2013 145
+  2017 145
+
+> cont <- subset(d, distrito <= 18)
+> summary(feols(participacao ~ agregada * pos13 + urbana,
++               data = subset(cont, ano %in% c(2009, 2013)), vcov = "iid"))
+OLS estimation, Dep. Var.: participacao
+Observations: 5,747
+Standard-errors: IID
+                Estimate Std. Error    t value  Pr(>|t|)
+(Intercept)    66.732520   0.211794 315.082391 < 2.2e-16 ***
+agregada       -0.189275   0.367636  -0.514843 0.6066824
+pos13          -3.411223   0.289407 -11.786939 < 2.2e-16 ***
+urbana         -5.190833   0.285689 -18.169550 < 2.2e-16 ***
+agregada:pos13 -1.405161   0.515981  -2.723280 0.0064833 **
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+RMSE: 9.07785   Adj. R2: 0.099012
+
+> summary(feols(participacao ~ agregada * pos17 + urbana,
++               data = subset(cont, ano %in% c(2013, 2017)), vcov = "iid"))
+OLS estimation, Dep. Var.: participacao
+Observations: 5,750
+Standard-errors: IID
+                Estimate Std. Error   t value   Pr(>|t|)
+(Intercept)    63.462120   0.213977 296.58321  < 2.2e-16 ***
+agregada       -1.492255   0.370151  -4.03148 5.6144e-05 ***
+pos17           1.646113   0.292463   5.62845 1.9044e-08 ***
+urbana         -5.926327   0.288518 -20.54059  < 2.2e-16 ***
+agregada:pos17 -0.675113   0.520555  -1.29691 1.9471e-01
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+RMSE: 9.16905   Adj. R2: 0.088517

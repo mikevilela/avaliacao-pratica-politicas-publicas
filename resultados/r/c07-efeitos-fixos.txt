@@ -1,0 +1,18 @@
+> d$tratamento <- d$agregada * (d$ano >= 2013)
+> fe <- feols(participacao ~ tratamento + i(ano, ref = 2001) | freguesia,
++             data = d, cluster = ~freguesia)
+> summary(fe)
+OLS estimation, Dep. Var.: participacao
+Observations: 14,645
+Fixed-effects: freguesia: 3,023
+Standard-errors: Clustered (freguesia)
+            Estimate Std. Error    t value  Pr(>|t|)
+tratamento -1.819536   0.190161  -9.568414 < 2.2e-16 ***
+ano::2005   0.058010   0.100959   0.574588   0.56561
+ano::2009  -2.743313   0.124783 -21.984603 < 2.2e-16 ***
+ano::2013  -5.985177   0.152087 -39.353616 < 2.2e-16 ***
+ano::2017  -4.651295   0.149492 -31.113964 < 2.2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+RMSE: 3.85902     Adj. R2: 0.796855
+                Within R2: 0.326421

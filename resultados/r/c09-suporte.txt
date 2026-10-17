@@ -1,0 +1,16 @@
+> d$ps <- fitted(logit)
+> tapply(d$ps, d$teip, summary)
+$`0`
+    Min.  1st Qu.   Median     Mean  3rd Qu.     Max.
+0.007916 0.048463 0.091193 0.144606 0.183404 0.836868
+
+$`1`
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
+0.01901 0.18326 0.36351 0.44120 0.68736 0.97999
+
+
+> sum(d$teip == 1 & d$ps > max(d$ps[d$teip == 0]))
+[1] 21
+
+> sum(d$teip == 0 & d$ps < min(d$ps[d$teip == 1]))
+[1] 22

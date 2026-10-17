@@ -1,0 +1,42 @@
+. prais ln_mulheres time paridade pos_tempo
+
+Iteration 0:  rho = 0.0000
+Iteration 1:  rho = 0.1678
+Iteration 2:  rho = 0.2231
+Iteration 3:  rho = 0.2459
+Iteration 4:  rho = 0.2560
+Iteration 5:  rho = 0.2606
+Iteration 6:  rho = 0.2627
+Iteration 7:  rho = 0.2637
+Iteration 8:  rho = 0.2642
+Iteration 9:  rho = 0.2644
+Iteration 10: rho = 0.2645
+Iteration 11: rho = 0.2645
+Iteration 12: rho = 0.2646
+Iteration 13: rho = 0.2646
+Iteration 14: rho = 0.2646
+Iteration 15: rho = 0.2646
+Iteration 16: rho = 0.2646
+Iteration 17: rho = 0.2646
+
+Prais–Winsten AR(1) regression with iterated estimates
+
+      Source |       SS           df       MS      Number of obs   =        11
+-------------+----------------------------------   F(3, 7)         =    103.63
+       Model |    3.111075         3    1.037025   Prob > F        =    0.0000
+    Residual |  .070051386         7  .010007341   R-squared       =    0.9780
+-------------+----------------------------------   Adj R-squared   =    0.9685
+       Total |  3.18112639        10  .318112639   Root MSE        =    .10004
+
+------------------------------------------------------------------------------
+ ln_mulheres | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+        time |   .2426543   .0184519    13.15   0.000     .1990224    .2862862
+    paridade |   .4277858   .1612852     2.65   0.033      .046407    .8091647
+   pos_tempo |  -.1835185   .0746386    -2.46   0.044    -.3600108   -.0070261
+       _cons |   3.840114   .0950019    40.42   0.000     3.615471    4.064758
+-------------+----------------------------------------------------------------
+         rho |   .2645897
+------------------------------------------------------------------------------
+Durbin–Watson statistic (original)    = 1.163965
+Durbin–Watson statistic (transformed) = 1.487600

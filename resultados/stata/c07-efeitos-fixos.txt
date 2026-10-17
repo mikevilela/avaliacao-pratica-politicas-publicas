@@ -1,0 +1,40 @@
+. encode freguesia, generate(id)
+. xtset id ano
+
+Panel variable: id (unbalanced)
+ Time variable: ano, 2001 to 2017, but with gaps
+         Delta: 1 unit
+
+. generate tratamento = agregada * (ano >= 2013)
+. xtreg participacao tratamento i.ano, fe vce(cluster id)
+
+Fixed-effects (within) regression               Number of obs     =     14,645
+Group variable: id                              Number of groups  =      3,023
+
+R-squared:                                      Obs per group:
+     Within  = 0.3264                                         min =          2
+     Between = 0.0135                                         avg =        4.8
+     Overall = 0.0851                                         max =          5
+
+                                                F(5, 3022)        =     721.53
+corr(u_i, Xb) = 0.0037                          Prob > F          =     0.0000
+
+                                 (Std. err. adjusted for 3,023 clusters in id)
+------------------------------------------------------------------------------
+             |               Robust
+participacao | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+  tratamento |  -1.819536   .1901607    -9.57   0.000    -2.192393   -1.446678
+             |
+         ano |
+       2005  |     .05801   .1009593     0.57   0.566     -.139946    .2559659
+       2009  |  -2.743313   .1247834   -21.98   0.000    -2.987982   -2.498645
+       2013  |  -5.985177   .1520871   -39.35   0.000    -6.283381   -5.686972
+       2017  |  -4.651295   .1494922   -31.11   0.000    -4.944411   -4.358178
+             |
+       _cons |   68.20959   .0840081   811.94   0.000     68.04487    68.37431
+-------------+----------------------------------------------------------------
+     sigma_u |  8.4347275
+     sigma_e |  4.3328625
+         rho |  .79121389   (fraction of variance due to u_i)
+------------------------------------------------------------------------------

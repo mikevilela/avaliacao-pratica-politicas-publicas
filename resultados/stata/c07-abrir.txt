@@ -1,0 +1,21 @@
+. use "../dados/freguesias_participacao.dta", clear
+. rename (SMU registered_voters turnout treated Year APU) ///
+>        (freguesia eleitores participacao agregada ano urbana)
+. describe
+
+Contains data from ../dados/freguesias_participacao.dta
+ Observations:        14,663
+    Variables:             6                  17 Mar 2020 12:42
+--------------------------------------------------------------------------------
+Variable      Storage   Display    Value
+    name         type    format    label      Variable label
+--------------------------------------------------------------------------------
+freguesia       str6    %9s                   Freguesia
+eleitores       double  %10.0g                (sum) inscrições
+participacao    float   %9.0g
+agregada        float   %10.0g                Treated
+ano             float   %10.0g                Year
+urbana          byte    %10.0g                APU
+--------------------------------------------------------------------------------
+Sorted by:
+     Note: Dataset has changed since last saved.

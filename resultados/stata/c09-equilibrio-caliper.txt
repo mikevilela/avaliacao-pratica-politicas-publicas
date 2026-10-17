@@ -1,0 +1,27 @@
+. quietly teffects psmatch (pds) (teip $X, logit) if fora_cal == 0, ///
+>     atet nneighbor(1) caliper(`=calip')
+. tebalance summarize
+(refitting the model using the generate() option)
+
+Covariate balance summary
+
+                         Raw      Matched
+-----------------------------------------
+Number of obs =          664          246
+Treated obs   =          123          123
+Control obs   =          541          123
+-----------------------------------------
+
+-----------------------------------------------------------------
+                |Standardized differences          Variance ratio
+                |        Raw     Matched           Raw    Matched
+----------------+------------------------------------------------
+        pct_ase |   .8887076    .0575323       1.08296   .9256091
+  conclusao_esp |  -.9963001   -.0060479      1.589652    .910886
+      ln_alunos |  -.3921766    .0474495      .9345505   .6938874
+   ln_densidade |   .1939896   -.0009808       1.50473    1.00122
+         centro |  -.4681235    .1873778      .4439744   1.897436
+            aml |   .2025137    .0355972        1.2645   1.033117
+       alentejo |   .1415855   -.0448202      1.399153   .9174757
+        algarve |   .2844332           0      2.720558          1
+-----------------------------------------------------------------

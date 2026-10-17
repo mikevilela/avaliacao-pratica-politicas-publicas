@@ -1,0 +1,39 @@
+. rddensity folga, c(0)
+Computing data-driven bandwidth selectors.
+
+Point estimates and standard errors have been adjusted for repeated observations
+> .
+(Use option nomasspoints to suppress this adjustment.)
+
+RD Manipulation test using local polynomial density estimation.
+
+     c =     0.000 | Left of c  Right of c          Number of obs =        40000
+-------------------+----------------------          Model         = unrestricted
+     Number of obs |     22267       17733          BW method     =         comb
+Eff. Number of obs |      5631        5294          Kernel        =   triangular
+    Order est. (p) |         2           2          VCE method    =    jackknife
+    Order bias (q) |         3           3
+       BW est. (h) |   644.433     554.714
+
+Running variable: folga.
+------------------------------------------
+            Method |      T          P>|T|
+-------------------+----------------------
+            Robust |   -0.9215      0.3568
+------------------------------------------
+
+P-values of binomial tests. (H0: prob = .5)
+-----------------------------------------------------
+ Window Length / 2 |       <c         >=c |     P>|T|
+-------------------+----------------------+----------
+             0.790 |        9          11 |    0.8238
+             1.580 |       15          19 |    0.6076
+             2.370 |       30          25 |    0.5901
+             3.160 |       36          34 |    0.9050
+             3.950 |       42          45 |    0.8304
+             4.740 |       48          54 |    0.6208
+             5.530 |       53          64 |    0.3553
+             6.320 |       60          74 |    0.2614
+             7.110 |       71          82 |    0.4189
+             7.900 |       74          90 |    0.2414
+-----------------------------------------------------

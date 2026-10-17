@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "Se usar estes dados ou este código, cite-os como indicado abaixo."
+title: "Avaliação Prática de Políticas Públicas — dados e código"
+version: "1.0.0"
+date-released: "2026-10-17"
+type: dataset
+license: MIT
+authors:
+  - family-names: "Rodrigues"
+    given-names: "Miguel Ângelo Vilela"
+    affiliation: "Universidade do Minho"
+keywords:
+  - avaliação de políticas públicas
+  - avaliação de impacto
+  - diferenças-em-diferenças
+  - séries temporais interrompidas
+  - matching
+  - regressão descontínua
+  - Stata
+  - R

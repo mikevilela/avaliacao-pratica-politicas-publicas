@@ -1,0 +1,30 @@
+. use "../dados/freguesias_participacao.dta", clear
+. describe
+
+Contains data from ../dados/freguesias_participacao.dta
+ Observations:        14,663
+    Variables:             6                  17 Mar 2020 12:42
+--------------------------------------------------------------------------------
+Variable      Storage   Display    Value
+    name         type    format    label      Variable label
+--------------------------------------------------------------------------------
+SMU             str6    %9s                   Freguesia
+registered_vo~s double  %10.0g                (sum) inscrições
+turnout         float   %9.0g
+treated         float   %10.0g                Treated
+Year            float   %10.0g                Year
+APU             byte    %10.0g                APU
+--------------------------------------------------------------------------------
+Sorted by:
+
+. list in 1/5
+
+     +-----------------------------------------------------+
+     |    SMU   regist~s    turnout   treated   Year   APU |
+     |-----------------------------------------------------|
+  1. | 010103       3686   52.82149         0   2017     0 |
+  2. | 010103       3686         50         0   2013     0 |
+  3. | 010103     3976.4      57.01         0   2005     0 |
+  4. | 010103       3952      48.74         0   2001     0 |
+  5. | 010103     4000.8      55.68         0   2009     0 |
+     +-----------------------------------------------------+

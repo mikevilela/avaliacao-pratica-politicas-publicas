@@ -1,0 +1,21 @@
+. rdrobust retencao folga, c(0)
+
+Sharp RD estimates using local polynomial regression.
+
+      Cutoff c = 0 | Left of c  Right of c            Number of obs =      40000
+-------------------+----------------------            BW type       =      mserd
+     Number of obs |     22267       17733            Kernel        = Triangular
+Eff. Number of obs |      7590        8714            VCE method    =         NN
+    Order est. (p) |         1           1
+    Order bias (q) |         2           2
+       BW est. (h) |   911.283     911.283
+       BW bias (b) |  1463.955    1463.955
+         rho (h/b) |     0.622       0.622
+
+Outcome: retencao. Running variable: folga.
+--------------------------------------------------------------------------------
+                   | Point         | Robust Inference
+                   | Estimate      | z-stat        P>|z|    [95% Conf. Interval]
+-------------------+------------------------------------------------------------
+         RD Effect | -.04224       | -3.8749       0.000    -.060818     -.01996
+--------------------------------------------------------------------------------

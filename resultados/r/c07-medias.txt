@@ -1,0 +1,18 @@
+> d <- subset(d, !is.na(participacao))
+> data.frame(media = tapply(d$participacao, d$ano, mean),
++            dp    = tapply(d$participacao, d$ano, sd),
++            n     = tapply(d$participacao, d$ano, length))
+        media       dp    n
+2001 68.20642 9.026299 2864
+2005 68.25263 8.700190 2871
+2009 65.44871 8.981592 2870
+2013 61.60852 9.851654 3022
+2017 62.93988 9.477270 3018
+
+> round(tapply(d$participacao, list(d$ano, d$agregada), mean), 2)
+         0     1
+2001 68.44 67.70
+2005 68.56 67.57
+2009 65.74 64.81
+2013 62.33 60.26
+2017 63.97 61.01

@@ -1,0 +1,7 @@
+> a09 <- mean(d$participacao[d$agregada == 1 & d$ano == 2009])
+> a13 <- mean(d$participacao[d$agregada == 1 & d$ano == 2013])
+> n09 <- mean(d$participacao[d$agregada == 0 & d$ano == 2009])
+> n13 <- mean(d$participacao[d$agregada == 0 & d$ano == 2013])
+> c(a09 = a09, a13 = a13, n09 = n09, n13 = n13)
+     a09      a13      n09      n13
+64.81297 60.26425 65.73915 62.32742

@@ -1,0 +1,11 @@
+> emp <- d[c(mt$index.treated, mt$index.control), ]
+> equilibrio(emp)
+              dif_padr razao_var
+pct_ase         -0.016     1.149
+conclusao_esp   -0.033     1.589
+ln_alunos       -0.193     1.153
+ln_densidade     0.102     1.311
+centro          -0.138     0.699
+aml             -0.015     0.990
+alentejo        -0.118     0.800
+algarve          0.153     1.590

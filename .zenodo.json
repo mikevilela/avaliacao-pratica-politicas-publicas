@@ -1,0 +1,9 @@
+{
+  "title": "Avaliação Prática de Políticas Públicas — dados e código",
+  "upload_type": "dataset",
+  "description": "Dados e guiões de comandos (Stata e R) que acompanham o livro «Avaliação Prática de Políticas Públicas: fundamentos, modelos e métodos de avaliação de impacto» (Rodrigues, 2026). Reproduzem todas as tabelas, figuras e caixas «Acompanhar no Stata e no R» dos capítulos 6 a 10.",
+  "creators": [{"name": "Rodrigues, Miguel Ângelo Vilela", "affiliation": "Universidade do Minho"}],
+  "license": "cc-by-4.0",
+  "language": "por",
+  "keywords": ["avaliação de políticas públicas", "avaliação de impacto", "diferenças-em-diferenças", "séries temporais interrompidas", "matching", "regressão descontínua", "Stata", "R"]
+}

@@ -1,0 +1,24 @@
+. quietly regress ln_mulheres time paridade pos_tempo
+. estat dwatson
+
+Durbin–Watson d-statistic(  4,    11) =  1.163965
+
+. estat bgodfrey, lags(1)
+
+Breusch–Godfrey LM test for autocorrelation
+---------------------------------------------------------------------------
+    lags(p)  |          chi2               df                 Prob > chi2
+-------------+-------------------------------------------------------------
+       1     |          0.317               1                   0.5734
+---------------------------------------------------------------------------
+                        H0: no serial correlation
+
+. estat durbinalt, lags(1)
+
+Durbin's alternative test for autocorrelation
+---------------------------------------------------------------------------
+    lags(p)  |          chi2               df                 Prob > chi2
+-------------+-------------------------------------------------------------
+       1     |          0.178               1                   0.6731
+---------------------------------------------------------------------------
+                        H0: no serial correlation

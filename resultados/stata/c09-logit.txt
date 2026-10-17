@@ -1,0 +1,34 @@
+. logit teip $X
+
+Iteration 0:  Log likelihood = -345.97616
+Iteration 1:  Log likelihood = -259.52095
+Iteration 2:  Log likelihood = -253.00057
+Iteration 3:  Log likelihood =  -252.9459
+Iteration 4:  Log likelihood = -252.94587
+Iteration 5:  Log likelihood = -252.94587
+
+Logistic regression                                     Number of obs =    681
+                                                        LR chi2(8)    = 186.06
+                                                        Prob > chi2   = 0.0000
+Log likelihood = -252.94587                             Pseudo R2     = 0.2689
+
+-------------------------------------------------------------------------------
+         teip | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+--------------+----------------------------------------------------------------
+      pct_ase |    .047914   .0128027     3.74   0.000     .0228212    .0730068
+conclusao_esp |  -.1888135   .0481026    -3.93   0.000    -.2830929    -.094534
+    ln_alunos |  -.4373355   .2724826    -1.61   0.108    -.9713916    .0967205
+ ln_densidade |   .2824957   .1035885     2.73   0.006     .0794661    .4855254
+       centro |  -.1997574   .4063191    -0.49   0.623    -.9961283    .5966135
+          aml |    .098809   .3513451     0.28   0.779    -.5898148    .7874328
+     alentejo |   1.150507   .4586194     2.51   0.012     .2516291    2.049384
+      algarve |   1.673144   .4517479     3.70   0.000     .7877344    2.558554
+        _cons |   13.81885   4.548847     3.04   0.002     4.903273    22.73442
+-------------------------------------------------------------------------------
+
+. lroc, nograph
+
+Logistic model for teip
+
+Number of observations =      681
+Area under ROC curve   =   0.8303

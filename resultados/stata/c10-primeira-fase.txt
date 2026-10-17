@@ -1,0 +1,30 @@
+. rdrobust ase_a folga, c(0)
+Not enough variability to compute the preliminary bandwidth. Consider using opti
+> on stdvars(on) (now the default) to standardize the running variable before ba
+> ndwidth selection; or check for mass points with masspoints(check).
+Not enough variability to compute the bias bandwidth (b). Consider using option
+> stdvars(on) (now the default) to standardize the running variable; or check fo
+> r mass points with masspoints(check).
+Not enough variability to compute the loc. poly. bandwidth (h). Consider using o
+> ption stdvars(on) (now the default) to standardize the running variable; or ch
+> eck for mass points with masspoints(check).
+
+Sharp RD estimates using local polynomial regression.
+
+      Cutoff c = 0 | Left of c  Right of c            Number of obs =      40000
+-------------------+----------------------            BW type       =      mserd
+     Number of obs |     22267       17733            Kernel        = Triangular
+Eff. Number of obs |     10670       12858            VCE method    =         NN
+    Order est. (p) |         1           1
+    Order bias (q) |         2           2
+       BW est. (h) |  1398.695    1398.695
+       BW bias (b) |  2262.361    2262.361
+         rho (h/b) |     0.618       0.618
+
+Outcome: ase_a. Running variable: folga.
+--------------------------------------------------------------------------------
+                   | Point         | Robust Inference
+                   | Estimate      | z-stat        P>|z|    [95% Conf. Interval]
+-------------------+------------------------------------------------------------
+         RD Effect |  .87096       | 111.7832      0.000     .854687     .885193
+--------------------------------------------------------------------------------

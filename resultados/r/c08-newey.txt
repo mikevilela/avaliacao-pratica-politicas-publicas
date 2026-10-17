@@ -1,0 +1,24 @@
+> V2 <- NeweyWest(m1, lag = 1, prewhite = FALSE, adjust = TRUE)
+> coeftest(m1, vcov. = V2)
+
+t test of coefficients:
+
+             Estimate Std. Error t value  Pr(>|t|)
+(Intercept)  3.806214   0.129194 29.4613 1.337e-08 ***
+time         0.248246   0.020963 11.8420 6.949e-06 ***
+paridade     0.428341   0.057349  7.4691 0.0001409 ***
+pos_tempo   -0.193614   0.023487 -8.2434 7.524e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+> waldtest(m1, vcov = V2, test = "F")
+Wald test
+
+Model 1: ln_mulheres ~ time + paridade + pos_tempo
+Model 2: ln_mulheres ~ 1
+  Res.Df Df      F    Pr(>F)
+1      7
+2     10 -3 343.19 5.877e-08 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

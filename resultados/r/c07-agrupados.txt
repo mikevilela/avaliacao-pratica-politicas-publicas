@@ -1,0 +1,23 @@
+> m2c <- feols(participacao ~ agregada * pos13 + urbana,
++              data = subset(d, ano %in% c(2009, 2013)), cluster = ~freguesia)
+> summary(m2c)
+OLS estimation, Dep. Var.: participacao
+Observations: 5,892
+Standard-errors: Clustered (freguesia)
+                Estimate Std. Error    t value   Pr(>|t|)
+(Intercept)    66.792568   0.211471 315.847286  < 2.2e-16 ***
+agregada       -0.144730   0.353616  -0.409284 6.8236e-01
+pos13          -3.411192   0.130508 -26.137901  < 2.2e-16 ***
+urbana         -5.504614   0.406739 -13.533521  < 2.2e-16 ***
+agregada:pos13 -1.242072   0.237789  -5.223421 1.8757e-07 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+RMSE: 9.11738   Adj. R2: 0.10293
+
+> confint(m2c)
+                    2.5 %     97.5 %
+(Intercept)    66.3779263 67.2072099
+agregada       -0.8380819  0.5486229
+pos13          -3.6670846 -3.1552996
+urbana         -6.3021272 -4.7071000
+agregada:pos13 -1.7083165 -0.7758273

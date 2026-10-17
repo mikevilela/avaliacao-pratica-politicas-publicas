@@ -1,0 +1,24 @@
+> dwtest(m1)
+
+	Durbin-Watson test
+
+data:  m1
+DW = 1.164, p-value = 0.004697
+alternative hypothesis: true autocorrelation is greater than 0
+
+
+> bgtest(m1, order = 1, type = "Chisq", fill = 0)
+
+	Breusch-Godfrey test for serial correlation of order up to 1
+
+data:  m1
+LM test = 0.317, df = 1, p-value = 0.5734
+
+
+> s$e     <- residuals(m1)
+> s$e_lag <- c(0, head(s$e, -1))
+> aux <- lm(e ~ time + paridade + pos_tempo + e_lag, data = s)
+> t_e <- coef(summary(aux))["e_lag", "t value"]
+> c(chi2 = t_e^2, p = pchisq(t_e^2, df = 1, lower.tail = FALSE))
+     chi2         p
+0.1780406 0.6730625

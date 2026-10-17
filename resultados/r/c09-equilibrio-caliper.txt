@@ -1,0 +1,29 @@
+> equilibrio <- function(dd) {
++   t1 <- dd$teip == 1; t0 <- dd$teip == 0
++   dp <- sapply(dd[, X], function(x) (mean(x[t1]) - mean(x[t0])) /
++                  sqrt((var(x[t1]) + var(x[t0])) / 2))
++   rv <- sapply(dd[, X], function(x) var(x[t1]) / var(x[t0]))
++   round(cbind(dif_padr = dp, razao_var = rv), 3)
++ }
+> equilibrio(d)
+              dif_padr razao_var
+pct_ase          1.029     1.383
+conclusao_esp   -1.112     3.222
+ln_alunos       -0.517     1.027
+ln_densidade     0.309     1.522
+centro          -0.508     0.395
+aml              0.293     1.353
+alentejo         0.111     1.312
+algarve          0.264     2.578
+
+> emp_c <- dc[c(mc$index.treated, mc$index.control), ]
+> equilibrio(emp_c)
+              dif_padr razao_var
+pct_ase          0.058     0.926
+conclusao_esp   -0.006     0.911
+ln_alunos        0.047     0.694
+ln_densidade    -0.001     1.001
+centro           0.187     1.897
+aml              0.036     1.033
+alentejo        -0.045     0.917
+algarve          0.000     1.000

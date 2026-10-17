@@ -1,0 +1,17 @@
+> d$folga    <- -d$dist_limiar
+> d$elegivel <- as.integer(d$folga >= 0)
+> summary(d[, c("rend_ref", "folga", "elegivel", "ase_a", "retencao")])
+    rend_ref           folga            elegivel          ase_a
+ Min.   :  595.6   Min.   :-8746.7   Min.   :0.0000   Min.   :0.0000
+ 1st Qu.: 2849.9   1st Qu.:-1681.5   1st Qu.:0.0000   1st Qu.:0.0000
+ Median : 3904.4   Median : -246.9   Median :0.0000   Median :0.0000
+ Mean   : 4304.6   Mean   : -647.1   Mean   :0.4433   Mean   :0.4906
+ 3rd Qu.: 5339.0   3rd Qu.:  807.6   3rd Qu.:1.0000   3rd Qu.:1.0000
+ Max.   :12404.2   Max.   : 3061.9   Max.   :1.0000   Max.   :1.0000
+    retencao
+ Min.   :0.00000
+ 1st Qu.:0.00000
+ Median :0.00000
+ Mean   :0.07132
+ 3rd Qu.:0.00000
+ Max.   :1.00000

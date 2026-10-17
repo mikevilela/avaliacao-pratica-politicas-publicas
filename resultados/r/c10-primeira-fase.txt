@@ -1,0 +1,27 @@
+> library(rdrobust)
+> summary(rdrobust(d$ase_a, d$folga, c = 0))
+Call: rdrobust
+
+Sharp RD estimates using local polynomial regression.
+
+Number of Obs.                40000
+BW type                       mserd
+Kernel                   Triangular
+VCE method                       NN
+
+                               Left        Right
+Number of Obs.                22267        17733
+Eff. Number of Obs.           10670        12858
+Order est. (p)                    1            1
+Order bias (q)                    2            2
+BW est. (h)                1398.695     1398.695
+BW bias (b)                2262.361     2262.361
+rho (h/b)                     0.618        0.618
+Unique Obs.                   21711        17012
+
+=====================================================================
+                   Point    Robust Inference
+                Estimate         z     P>|z|      [ 95% C.I. ]
+---------------------------------------------------------------------
+     RD Effect     0.871   111.783     0.000     [0.855 , 0.885]
+=====================================================================

@@ -1,0 +1,26 @@
+. rename (SMU registered_voters turnout treated Year APU) ///
+>        (freguesia eleitores participacao agregada ano urbana)
+. summarize participacao agregada ano urbana
+
+    Variable |        Obs        Mean    Std. dev.       Min        Max
+-------------+---------------------------------------------------------
+participacao |     14,645    65.22825    9.613281          0      93.85
+    agregada |     14,663    .3286503    .4697386          0          1
+         ano |     14,663    2009.133    5.669549       2001       2017
+      urbana |     14,663    .2348769    .4239363          0          1
+
+. drop if missing(participacao)
+(18 observations deleted)
+
+. tabulate ano agregada
+
+           |        Treated
+      Year |         0          1 |     Total
+-----------+----------------------+----------
+      2001 |     1,964        900 |     2,864
+      2005 |     1,970        901 |     2,871
+      2009 |     1,970        900 |     2,870
+      2013 |     1,969      1,053 |     3,022
+      2017 |     1,966      1,052 |     3,018
+-----------+----------------------+----------
+     Total |     9,839      4,806 |    14,645

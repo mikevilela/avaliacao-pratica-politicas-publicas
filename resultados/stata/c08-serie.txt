@@ -1,0 +1,31 @@
+. rename (TotalMulheres ParLaw propostas Total ProMulheres) ///
+>        (mulheres paridade quotas_vol eleitos prop_mulheres)
+. tsset time
+
+Time variable: time, 1 to 11
+        Delta: 1 unit
+
+. generate ln_mulheres = ln(mulheres)
+. generate dif = D.mulheres
+(1 missing value generated)
+
+. generate dif_ln = D.ln_mulheres
+(1 missing value generated)
+
+. list year time mulheres dif ln_mulheres dif_ln, noobs sep(0)
+
+  +-----------------------------------------------------+
+  | year   time   mulheres   dif   ln_mul~s      dif_ln |
+  |-----------------------------------------------------|
+  | 1979      1         70     .   4.248495           . |
+  | 1982      2         69    -1   4.234107   -.0143886 |
+  | 1985      3         85    16   4.442651    .2085447 |
+  | 1989      4        108    23   4.682131      .23948 |
+  | 1993      5        151    43    5.01728    .3351483 |
+  | 1997      6        210    59   5.347107    .3298278 |
+  | 2001      7        269    59   5.594711    .2476039 |
+  | 2005      8        337    68   5.820083    .2253718 |
+  | 2009      9        537   200   6.285998    .4659147 |
+  | 2013     10        549    12   6.308098    .0221004 |
+  | 2017     11        599    50   6.395262    .0871634 |
+  +-----------------------------------------------------+

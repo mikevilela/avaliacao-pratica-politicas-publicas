@@ -1,0 +1,8 @@
+*.log
+*.Rout
+.Rhistory
+.RData
+.DS_Store
+R/saidas/
+figuras/*.png
+figuras/*.gph

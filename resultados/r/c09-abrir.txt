@@ -1,0 +1,12 @@
+> library(haven)
+> teip <- zap_labels(read_dta("../dados/teip_agrupamentos.dta"))
+> X <- c("pct_ase", "conclusao_esp", "ln_alunos", "ln_densidade",
++        "centro", "aml", "alentejo", "algarve")
+> d <- as.data.frame(subset(teip, amostra == 1))
+> dim(d)
+[1] 681  37
+
+> table(d$teip)
+
+  0   1
+541 140

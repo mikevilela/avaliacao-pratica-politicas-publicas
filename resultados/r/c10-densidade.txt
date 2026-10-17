@@ -1,0 +1,35 @@
+> library(rddensity)
+> summary(rddensity(d$folga, c = 0))
+
+Manipulation testing using local polynomial density estimation.
+
+Number of obs =       40000
+Model =               unrestricted
+Kernel =              triangular
+BW method =           estimated
+VCE method =          jackknife
+
+c = 0                 Left of c           Right of c
+Number of obs         22267               17733
+Eff. Number of obs    5631                5294
+Order est. (p)        2                   2
+Order bias (q)        3                   3
+BW est. (h)           644.433             554.714
+
+Method                T                   P > |T|
+Robust                -0.9215             0.3568
+
+
+P-values of binomial tests (H0: p=0.5).
+
+Window Length / 2          <c     >=c    P>|T|
+1.850                      20      22    0.8776
+3.700                      40      44    0.7436
+5.550                      54      64    0.4075
+7.400                      73      85    0.3816
+9.250                      82     107    0.0806
+11.100                     95     121    0.0887
+12.950                    107     141    0.0359
+14.800                    119     164    0.0088
+16.650                    132     185    0.0034
+18.500                    149     201    0.0063

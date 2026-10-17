@@ -1,0 +1,18 @@
+. summarize participacao if agregada == 1 & ano == 2009
+
+    Variable |        Obs        Mean    Std. dev.       Min        Max
+-------------+---------------------------------------------------------
+participacao |        900    64.81297    9.001061   27.19706   86.90954
+
+. scalar a09 = r(mean)
+. quietly summarize participacao if agregada == 1 & ano == 2013
+. scalar a13 = r(mean)
+. quietly summarize participacao if agregada == 0 & ano == 2009
+. scalar n09 = r(mean)
+. quietly summarize participacao if agregada == 0 & ano == 2013
+. scalar n13 = r(mean)
+. scalar list
+       n13 =   62.32742
+       n09 =  65.739147
+       a13 =  60.264254
+       a09 =  64.812967
